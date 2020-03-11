@@ -1,21 +1,46 @@
-import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
-
-export default IndexPage
+import React, { Component } from 'react';
+import Faq from 'react-faq-component';
+ 
+const data = {
+  title: "FAQ (How it works)",
+  rows: [
+    {
+      title: "Lorem ipsum dolor sit amet,",
+      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat, 
+              ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus. 
+              In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae. 
+              Fusce sed commodo purus, at tempus turpis.`
+    },
+    {
+      title: "Nunc maximus, magna at ultricies elementum",
+      content: "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor."
+    },
+    {
+      title: "Curabitur laoreet, mauris vel blandit fringilla",
+      content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem. 
+            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam. 
+            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat. 
+            Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `
+    },
+    {
+      title: "What is the package version",
+      content: "v1.0.0"
+    }]
+}
+ 
+const styles = {
+  // bgColor: 'white',
+  titleTextColor: 'blue',
+  rowTitleColor: 'blue',
+  // rowContentColor: 'grey'
+}
+ 
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <Faq data={data} styles={styles}/>
+      </div>
+    )
+  }
+}
